@@ -37,6 +37,10 @@
         );
       }
 
+      socket.on('receivedMessage', (message) => {
+        renderMessage(message);
+      });
+
       $('#chat').submit((event) => {
         event.preventDefault();
 
