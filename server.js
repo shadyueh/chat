@@ -21,6 +21,10 @@ app.use('/', (req, res) => {
   res.render('index.html');
 });
 
+io.on('connection', (socket) => {
+  console.log(`Socket conectado: ${socket.id}`);
+});
+
 server.listen(port, () => {
   console.log('Server está escutando a porta *:' + port);
 });
