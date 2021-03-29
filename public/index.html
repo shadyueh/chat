@@ -37,6 +37,12 @@
         );
       }
 
+      socket.on('previousMessages', (messages) => {
+        for (const message of messages) {
+          renderMessage(message);
+        }
+      });
+
       socket.on('receivedMessage', (message) => {
         renderMessage(message);
       });
